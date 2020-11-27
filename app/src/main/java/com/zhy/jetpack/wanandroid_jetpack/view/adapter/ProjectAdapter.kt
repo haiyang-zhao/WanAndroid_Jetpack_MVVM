@@ -1,12 +1,11 @@
 package com.zhy.jetpack.wanandroid_jetpack.view.adapter
 
 import android.widget.ImageView
-import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.zhy.jetpack.wanandroid_jetpack.AppContext
 import com.zhy.jetpack.wanandroid_jetpack.R
 import com.zhy.jetpack.wanandroid_jetpack.data.model.Article
+import com.zhy.jetpack.wanandroid_jetpack.ext.loadImage
 import com.zhy.jetpack.wanandroid_jetpack.ext.setAdapterAnimation
 import com.zhy.jetpack.wanandroid_jetpack.ext.toHtml
 import com.zhy.jetpack.wanandroid_jetpack.utils.SettingUtil
@@ -28,9 +27,7 @@ class ProjectAdapter(data: MutableList<Article>) :
             holder.setText(R.id.tv_title, title.toHtml())
             holder.setText(R.id.tv_desc, desc.toHtml())
             val image = holder.getView<ImageView>(R.id.iv_pic)
-            Glide.with(AppContext)
-                .load(envelopePic)
-                .into(image)
+            loadImage(image, envelopePic, R.drawable.default_pr_bg, R.drawable.default_pr_bg)
         }
     }
 }

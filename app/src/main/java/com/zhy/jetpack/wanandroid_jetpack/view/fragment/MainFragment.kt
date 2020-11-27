@@ -47,7 +47,7 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>() {
                 return when (position) {
                     0 -> HomeFragment()
                     1 -> ProjectFragment()
-                    2 -> SquareFragment()
+                    2 -> ChannelFragment()
                     3 -> OfficialAccountsFragment()
                     4 -> MeFragment()
                     else -> HomeFragment()

@@ -20,7 +20,7 @@ import com.zhy.jetpack.wanandroid_jetpack.widget.recyclerview.SpaceItemDecoratio
 import kotlinx.android.synthetic.main.include_list.*
 import kotlinx.android.synthetic.main.include_recyclerview.*
 
-class WXArticleFragment : BaseFragment<WXArticleViewModel, IncludeListBinding>() {
+class ArticleListFragment : BaseFragment<WXArticleViewModel, IncludeListBinding>() {
 
     private val requestViewModel by viewModels<RequestWXArticleViewModel>()
     private val articleAdapter by lazy { ArticleAdapter(mutableListOf()) }
@@ -83,8 +83,8 @@ class WXArticleFragment : BaseFragment<WXArticleViewModel, IncludeListBinding>()
     }
 
     companion object {
-        fun newInstance(id: Int): WXArticleFragment {
-            return WXArticleFragment()
+        fun newInstance(id: Int): ArticleListFragment {
+            return ArticleListFragment()
                 .apply {
                     arguments = Bundle().apply {
                         putInt(KEY_WX_CHAPTER_ID, id)

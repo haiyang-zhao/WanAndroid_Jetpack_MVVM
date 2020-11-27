@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/menu_system"
-        android:icon="@drawable/menu_tree"
+        android:icon="@drawable/menu_pindao"
         android:title="@string/bottom_name3" />
     <item
         android:id="@+id/menu_public"
@@ -21,7 +21,7 @@
         android:title="@string/bottom_name4" />
     <item
         android:id="@+id/menu_me"
-        android:icon="@drawable/menu_me"
+        android:icon="@drawable/menu_wo"
         android:title="@string/bottom_name5" />
 
 </menu>

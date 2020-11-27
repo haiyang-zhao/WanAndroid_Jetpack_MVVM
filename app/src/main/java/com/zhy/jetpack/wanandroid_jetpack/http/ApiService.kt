@@ -45,5 +45,15 @@ interface ApiService {
         @Query("cid") cid: Int //分类的id，上面项目分类接口
     ): ApiResult<Pagination<Article>>
 
+    //体系
+    @GET("/tree/json")
+    suspend fun channelTree(): ApiResult<MutableList<Channel>>
+
+    //知识体系下的文章
+    @GET("/article/list/{page}/json")
+    suspend fun treeArticles(
+        @Path("page") page: Int,//页码
+        @Query("cid") cid: Int  //分类的id，上面项目分类接口
+    ): ApiResult<Pagination<Article>>
 
 }

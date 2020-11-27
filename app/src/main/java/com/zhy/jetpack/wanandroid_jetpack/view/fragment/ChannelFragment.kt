@@ -8,14 +8,13 @@ import com.zhy.jetpack.wanandroid_jetpack.databinding.FragmentTabViewpagerBindin
 import com.zhy.jetpack.wanandroid_jetpack.ext.bindAdapter
 import com.zhy.jetpack.wanandroid_jetpack.ext.bindViewPager2
 import com.zhy.jetpack.wanandroid_jetpack.view.adapter.IndicatorTitle
-import com.zhy.jetpack.wanandroid_jetpack.viewmodel.request.RequestOfficialAccountsViewModel
-import com.zhy.jetpack.wanandroid_jetpack.viewmodel.state.OfficialAccountsViewModel
+import com.zhy.jetpack.wanandroid_jetpack.viewmodel.request.RequestChannelViewModel
+import com.zhy.jetpack.wanandroid_jetpack.viewmodel.state.ChannelViewModel
 import kotlinx.android.synthetic.main.include_tab_viewpager.*
 
-class OfficialAccountsFragment :
-    BaseFragment<OfficialAccountsViewModel, FragmentTabViewpagerBinding>() {
+class ChannelFragment : BaseFragment<ChannelViewModel, FragmentTabViewpagerBinding>() {
 
-    private val requestViewModel by viewModels<RequestOfficialAccountsViewModel>()
+    private val requestViewModel by viewModels<RequestChannelViewModel>()
     private var chapters = mutableListOf<IndicatorTitle>()
     private var fragments = mutableListOf<Fragment>()
 
@@ -53,5 +52,4 @@ class OfficialAccountsFragment :
             })
         }
     }
-
 }

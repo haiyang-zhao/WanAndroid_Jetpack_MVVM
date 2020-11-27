@@ -35,7 +35,7 @@
             android:background="@drawable/item_img_selector"
             android:textColor="@color/colorBlack666"
             android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="2020-06-02 21:58" />
 

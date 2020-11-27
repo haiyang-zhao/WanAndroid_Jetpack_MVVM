@@ -21,5 +21,6 @@
     <color name="backgrounGrey">#CCCCCC</color>
     <color name="background">#d8d8d8</color>
     <color name="windowBackground">#F5F5F5</color>
+    <color name="textHint">#999999</color>
 
 </resources>

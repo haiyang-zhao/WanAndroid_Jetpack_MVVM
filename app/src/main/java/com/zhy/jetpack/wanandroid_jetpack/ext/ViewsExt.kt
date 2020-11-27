@@ -8,7 +8,9 @@ import android.text.Html
 import android.text.Spanned
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.kingja.loadsir.core.LoadService
@@ -309,3 +313,21 @@ fun ViewPager2.bindAdapter(
     }
     return this
 }
+
+fun loadImage(
+    targetView: ImageView,
+    src: String,
+    @DrawableRes
+    placeholderRes: Int = 0,
+    @DrawableRes
+    errorRes: Int = 0
+) {
+    val options = RequestOptions()
+        .error(R.drawable.default_pr_bg).placeholder(R.drawable.default_pr_bg)
+    Glide.with(AppContext)
+        .applyDefaultRequestOptions(options)
+        .load(src)
+        .into(targetView)
+}
+
+
