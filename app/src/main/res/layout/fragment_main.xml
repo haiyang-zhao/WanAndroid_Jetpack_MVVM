@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.acitivity.MainActivity">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mainVp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/mainBottomNav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+            android:id="@+id/mainBottomNav"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            app:itemIconSize="22sp"
+            app:itemIconTint="@color/bottom_selector"
+            app:itemTextColor="@color/bottom_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainVp"
+            app:menu="@menu/menu_main_bottom_nav" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

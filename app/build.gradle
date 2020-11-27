@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.zhy.jetpack.wanandroid_jetpack"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation project(':mvvm')
+
+    implementation deps.kotlin.stdlib
+    implementation deps.core_ktx
+    implementation deps.activity_ktx
+    implementation deps.fragment_ktx
+    implementation deps.constraint_layout
+    implementation deps.appcompat
+    implementation deps.material
+    implementation deps.bottom_nav
+    implementation deps.utilcodex
+    implementation deps.mmkv
+    implementation deps.material_dialogs.core
+    implementation deps.base_adapter
+    implementation deps.loadsir
+    implementation deps.banner
+    implementation deps.autosize
+    implementation deps.glide_core
+    implementation deps.indicator
+    implementation deps.swipe_recyclerView
+
+    implementation deps.loggingInterceptor
+    implementation deps.stetho
+    implementation deps.cookie_jar
+    implementation deps.agentweb
+
+    kapt deps.glide_compiler
+
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
