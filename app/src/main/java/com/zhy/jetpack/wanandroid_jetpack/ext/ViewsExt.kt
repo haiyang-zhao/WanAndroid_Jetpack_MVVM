@@ -18,6 +18,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.WhichButton
+import com.afollestad.materialdialogs.actions.getActionButton
+import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -41,6 +45,38 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerInd
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPagerTitleView
+
+
+
+//Fragment 上的 Dialog
+fun Fragment.showMessage(
+    message: String,
+    title: String = "温馨提示",
+    positiveButtonText: String = "确定",
+    positiveAction: () -> Unit = {},
+    negativeButtonText: String = "",
+    negativeAction: () -> Unit = {}
+) {
+    activity?.let {
+        MaterialDialog(it)
+            .cancelable(false)
+            .lifecycleOwner(viewLifecycleOwner)
+            .show {
+                title(text = title)
+                message(text = message)
+                positiveButton(text = positiveButtonText) {
+                    positiveAction.invoke()
+                }
+                if (negativeButtonText.isNotEmpty()) {
+                    negativeButton(text = negativeButtonText) {
+                        negativeAction.invoke()
+                    }
+                }
+                getActionButton(WhichButton.POSITIVE).updateTextColor(SettingUtil.getColor(it))
+                getActionButton(WhichButton.NEGATIVE).updateTextColor(SettingUtil.getColor(it))
+            }
+    }
+}
 
 
 //绑定SwipeRecyclerView

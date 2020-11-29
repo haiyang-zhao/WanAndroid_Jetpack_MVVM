@@ -54,6 +54,10 @@ dependencies {
     implementation deps.utilcodex
     implementation deps.mmkv
     implementation deps.material_dialogs.core
+    implementation deps.material_dialogs.lifecycle
+    implementation deps.material_dialogs.color
+    implementation deps.material_dialogs.datetime
+    implementation deps.material_dialogs.bottomsheets
     implementation deps.base_adapter
     implementation deps.loadsir
     implementation deps.banner

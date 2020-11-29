@@ -2,9 +2,7 @@ package com.zhy.jetpack.wanandroid_jetpack.http
 
 import com.zhy.jetpack.wanandroid_jetpack.data.model.*
 import com.zhy.jetpack.wanandroid_jetpack.http.model.ApiResult
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 
 const val BASE_URL = "https://wanandroid.com/"
@@ -55,5 +53,17 @@ interface ApiService {
         @Path("page") page: Int,//页码
         @Query("cid") cid: Int  //分类的id，上面项目分类接口
     ): ApiResult<Pagination<Article>>
+
+    //登录
+    @FormUrlEncoded
+    @POST("/user/login")
+    suspend fun login(
+        @Field("username") username: String,
+        @Field("password") password: String
+    ): ApiResult<User>
+
+    //个人积分
+    @GET("/lg/coin/userinfo/json")
+    suspend fun userCoin(): ApiResult<UserCoin>
 
 }

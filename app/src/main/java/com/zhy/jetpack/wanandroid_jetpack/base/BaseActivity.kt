@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import androidx.databinding.ViewDataBinding
 import com.zhy.jetpack.mvvm.base.activity.BaseVDBActivity
 import com.zhy.jetpack.mvvm.base.viewmodel.BaseViewModel
+import com.zhy.jetpack.wanandroid_jetpack.ext.getAppViewModel
 import com.zhy.jetpack.wanandroid_jetpack.viewmodel.EventViewModel
 import com.zhy.jetpack.wanandroid_jetpack.viewmodel.SharedViewModel
 
@@ -12,9 +13,9 @@ import com.zhy.jetpack.wanandroid_jetpack.viewmodel.SharedViewModel
 abstract class BaseActivity<VM : BaseViewModel, VDB : ViewDataBinding> :
     BaseVDBActivity<VM, VDB>() {
 
-    val sharedViewModel by viewModels<SharedViewModel>()
+    val sharedViewModel by lazy { getAppViewModel<SharedViewModel>() }
 
-    val eventViewModel by viewModels<EventViewModel>()
+    val eventViewModel by lazy { getAppViewModel<EventViewModel>() }
 
     override fun layoutId() = 0
 

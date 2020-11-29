@@ -9,12 +9,32 @@
         android:id="@+id/mainFragment"
         android:name="com.zhy.jetpack.wanandroid_jetpack.view.fragment.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_login_to_mainFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/webFragment"
         android:name="com.zhy.jetpack.wanandroid_jetpack.view.fragment.WebFragment"
         android:label="WebFragment"
         tools:layout="@layout/fragment_web" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.zhy.jetpack.wanandroid_jetpack.view.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/meFragment"
+        android:name="com.zhy.jetpack.wanandroid_jetpack.view.fragment.MeFragment"
+        android:label="MeFragment"
+        tools:layout="@layout/fragment_me" />
 
 
     <action
@@ -24,4 +44,14 @@
         app:exitAnim="@anim/slide_out_left"
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
+
+
+    <action
+        android:id="@+id/action_to_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
 </navigation>

@@ -128,6 +128,10 @@ deps.agentweb = "com.just.agentweb:agentweb-androidx:$versions.agentweb"
 //dialog
 def material_dialogs = [:]
 material_dialogs.core = "com.afollestad.material-dialogs:core:$versions.material_dialogs"
+material_dialogs.lifecycle = "com.afollestad.material-dialogs:lifecycle:$versions.material_dialogs"
+material_dialogs.color = "com.afollestad.material-dialogs:color:$versions.material_dialogs"
+material_dialogs.datetime = "com.afollestad.material-dialogs:datetime:$versions.material_dialogs"
+material_dialogs.bottomsheets = "com.afollestad.material-dialogs:bottomsheets:$versions.material_dialogs"
 deps.material_dialogs = material_dialogs
 
 //logback
