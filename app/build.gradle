@@ -70,6 +70,7 @@ dependencies {
     implementation deps.stetho
     implementation deps.cookie_jar
     implementation deps.agentweb
+    implementation deps.flexbox
 
     kapt deps.glide_compiler
 

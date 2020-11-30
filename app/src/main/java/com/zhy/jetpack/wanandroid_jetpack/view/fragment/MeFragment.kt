@@ -46,7 +46,7 @@ class MeFragment : BaseFragment<MeViewModel, FragmentMeBinding>() {
         mBinding.click = ProxyClick()
 
         mViewModel.isLogin.set(isLogin())
-        mViewModel.name.set(curUser()?.nickname)
+        mViewModel.name.set(curUser()?.nickname?:"")
     }
 
     override fun initData() {

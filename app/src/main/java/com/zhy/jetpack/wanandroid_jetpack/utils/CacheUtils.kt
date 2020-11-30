@@ -24,7 +24,7 @@ fun cacheMyChannel(channels: MutableList<IndicatorTitle>) {
     mmkv.encode(KEY_MY_CHANNELS, gson.toJson(channels))
 }
 
-fun curChannels(): MutableList<IndicatorTitle>? {
+fun myChannels(): MutableList<IndicatorTitle>? {
     return mmkv.decodeString(KEY_MY_CHANNELS)?.run {
         return gson.fromJson(this, object : TypeToken<MutableList<IndicatorTitle>>() {}.type)
     }

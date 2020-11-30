@@ -7,7 +7,6 @@ import com.zhy.jetpack.wanandroid_jetpack.http.apiClient
 import com.zhy.jetpack.wanandroid_jetpack.http.model.ApiResult
 import com.zhy.jetpack.wanandroid_jetpack.http.state.ResultState
 import com.zhy.jetpack.wanandroid_jetpack.utils.cacheMyChannel
-import com.zhy.jetpack.wanandroid_jetpack.utils.curChannels
 import com.zhy.jetpack.wanandroid_jetpack.view.adapter.IndicatorTitle
 
 class RequestChannelViewModel : BaseViewModel() {
@@ -24,7 +23,7 @@ class RequestChannelViewModel : BaseViewModel() {
 
     private suspend fun myChannels(): ApiResult<MutableList<IndicatorTitle>> {
         return try {
-            var myChannels = curChannels()
+            var myChannels = com.zhy.jetpack.wanandroid_jetpack.utils.myChannels()
             if (myChannels == null) {
                 myChannels = apiClient.channelTree()
                     .data[0].children

@@ -23,5 +23,6 @@
     <color name="windowBackground">#F5F5F5</color>
     <color name="background_eee">#eeeeee</color>
     <color name="textHint">#999999</color>
+    <color name="tag">#F8F1F1</color>
 
 </resources>

@@ -7,7 +7,6 @@
     <string name="bottom_name5">我的</string>
 
 
-
     <string name="login">登录</string>
     <string name="login_tip">请您先登录</string>
     <string name="login_input_username_hint">用户名</string>
@@ -22,4 +21,7 @@
     <string name="register_sms_auth_code">短信验证码</string>
     <string name="register_sms_hint">获取验证码</string>
     <string name="register_sms_wait_hint">别激动,休息一下呗&#8230;</string>
+    <string name="channel_me">我的频道</string>
+    <string name="channel_edit">编辑</string>
+    <string name="channel_complete">完成</string>
 </resources>

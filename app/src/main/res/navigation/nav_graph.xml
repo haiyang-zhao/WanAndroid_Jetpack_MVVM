@@ -54,4 +54,26 @@
         app:popEnterAnim="@anim/slide_in_left"
         app:popExitAnim="@anim/slide_out_right" />
 
+
+    <action
+        android:id="@+id/action_channelFragment_to_channelEditFragment"
+        app:destination="@id/channelEditFragment"
+        app:enterAnim="@anim/push_bottom_in"
+        app:exitAnim="@anim/push_bottom_out"
+        app:popEnterAnim="@anim/push_bottom_in"
+        app:popExitAnim="@anim/push_bottom_out" />
+    <fragment
+        android:id="@+id/channelEditFragment"
+        android:name="com.zhy.jetpack.wanandroid_jetpack.view.fragment.ChannelEditFragment"
+        android:label="ChannelEditFragment"
+        tools:layout="@layout/fragment_channel_edit"
+        />
+    <fragment
+        android:id="@+id/channelFragment"
+        android:name="com.zhy.jetpack.wanandroid_jetpack.view.fragment.ChannelFragment"
+        android:label="ChannelFragment"
+        tools:layout="@layout/fragment_channel">
+
+    </fragment>
+
 </navigation>

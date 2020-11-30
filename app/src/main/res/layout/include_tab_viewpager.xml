@@ -43,7 +43,7 @@
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_type"
             android:layout_marginEnd="5dp"
-            android:visibility="visible"
+            android:visibility="gone"
              />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

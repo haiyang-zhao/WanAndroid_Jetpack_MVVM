@@ -1,7 +1,10 @@
 package com.zhy.jetpack.wanandroid_jetpack.view.fragment
 
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.zhy.jetpack.mvvm.ext.nav
+import com.zhy.jetpack.mvvm.ext.navigateAction
 import com.zhy.jetpack.wanandroid_jetpack.R
 import com.zhy.jetpack.wanandroid_jetpack.base.BaseFragment
 import com.zhy.jetpack.wanandroid_jetpack.databinding.FragmentTabViewpagerBinding
@@ -22,6 +25,10 @@ class ChannelFragment : BaseFragment<ChannelViewModel, FragmentTabViewpagerBindi
     override fun initView() {
         magic_indicator.bindViewPager2(view_pager, chapters)
         view_pager.bindAdapter(fragments, this)
+        iv_channel.visibility = View.VISIBLE
+        iv_channel.setOnClickListener {
+            nav().navigateAction(R.id.action_channelFragment_to_channelEditFragment)
+        }
 
     }
 
