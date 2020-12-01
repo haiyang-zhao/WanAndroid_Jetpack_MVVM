@@ -10,9 +10,11 @@ import com.zhy.jetpack.wanandroid_jetpack.base.BaseFragment
 import com.zhy.jetpack.wanandroid_jetpack.databinding.FragmentTabViewpagerBinding
 import com.zhy.jetpack.wanandroid_jetpack.ext.bindAdapter
 import com.zhy.jetpack.wanandroid_jetpack.ext.bindViewPager2
+import com.zhy.jetpack.wanandroid_jetpack.ext.init
 import com.zhy.jetpack.wanandroid_jetpack.view.adapter.IndicatorTitle
 import com.zhy.jetpack.wanandroid_jetpack.viewmodel.request.RequestChannelViewModel
 import com.zhy.jetpack.wanandroid_jetpack.viewmodel.state.ChannelViewModel
+import kotlinx.android.synthetic.main.include_recyclerview.*
 import kotlinx.android.synthetic.main.include_tab_viewpager.*
 
 class ChannelFragment : BaseFragment<ChannelViewModel, FragmentTabViewpagerBinding>() {
@@ -29,6 +31,10 @@ class ChannelFragment : BaseFragment<ChannelViewModel, FragmentTabViewpagerBindi
         iv_channel.setOnClickListener {
             nav().navigateAction(R.id.action_channelFragment_to_channelEditFragment)
         }
+
+//        swipeRefresh.init {
+////            requestViewModel.requestArticles()
+//        }
 
     }
 

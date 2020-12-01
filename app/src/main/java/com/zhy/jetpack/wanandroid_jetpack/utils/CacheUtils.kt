@@ -3,6 +3,7 @@ package com.zhy.jetpack.wanandroid_jetpack.utils
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.tencent.mmkv.MMKV
+import com.zhy.jetpack.wanandroid_jetpack.data.model.Channel
 import com.zhy.jetpack.wanandroid_jetpack.data.model.User
 import com.zhy.jetpack.wanandroid_jetpack.view.adapter.IndicatorTitle
 
@@ -22,6 +23,16 @@ fun curUser(): User? {
 
 fun cacheMyChannel(channels: MutableList<IndicatorTitle>) {
     mmkv.encode(KEY_MY_CHANNELS, gson.toJson(channels))
+}
+
+fun cacheAllChannel(channels: MutableList<Channel>) {
+    mmkv.encode(KEY_ALL_CHANNEL, gson.toJson(channels))
+}
+
+fun allChannel(): MutableList<Channel>? {
+    return mmkv.decodeString(KEY_ALL_CHANNEL)?.run {
+        return gson.fromJson(this, object : TypeToken<MutableList<Channel>>() {}.type)
+    }
 }
 
 fun myChannels(): MutableList<IndicatorTitle>? {

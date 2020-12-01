@@ -11,7 +11,10 @@ import com.zhy.jetpack.wanandroid_jetpack.data.model.Channel
 import com.zhy.jetpack.wanandroid_jetpack.ext.setAdapterAnimation
 import com.zhy.jetpack.wanandroid_jetpack.utils.SettingUtil
 
-class ChannelAdapter(data: MutableList<Channel>) :
+class ChannelAdapter(
+    data: MutableList<Channel>,
+    var optListener: ChannelTagAdapter.TagOperationListener? = null
+) :
 
     BaseQuickAdapter<Channel, BaseViewHolder>(
         R.layout.item_channel,
@@ -41,7 +44,7 @@ class ChannelAdapter(data: MutableList<Channel>) :
                     }
                     adapter =
                         ChannelTagAdapter(item.children.map { i -> IndicatorTitle(i.id, i.name) }
-                            .toMutableList(), CHANNEL_OPT_ADD)
+                            .toMutableList(), CHANNEL_OPT_ADD, optListener)
                 }
         }
     }

@@ -1,5 +1,6 @@
 package com.zhy.jetpack.wanandroid_jetpack.view.adapter
 
+import android.widget.ImageView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.zhy.jetpack.wanandroid_jetpack.R
@@ -12,7 +13,8 @@ const val CHANNEL_OPT_REMOVE = 2
 
 class ChannelTagAdapter(
     data: MutableList<IndicatorTitle>,
-    private var opt: Int = CHANNEL_OPT_NONE
+    var opt: Int = CHANNEL_OPT_NONE,
+    var optListener: TagOperationListener? = null
 ) :
 
     BaseQuickAdapter<IndicatorTitle, BaseViewHolder>(R.layout.item_channel_tag, data) {
@@ -32,5 +34,12 @@ class ChannelTagAdapter(
         item.run {
             holder.setText(R.id.tv_tag, item.title)
         }
+        holder.getView<ImageView>(R.id.iv_opt).setOnClickListener {
+            optListener?.doOperation(opt, item)
+        }
+    }
+
+    interface TagOperationListener {
+        fun doOperation(opt: Int, tag: IndicatorTitle)
     }
 }
